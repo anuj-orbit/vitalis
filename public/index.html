@@ -3,15 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>App Template</title>
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 64px auto; padding: 0 16px; line-height: 1.6; color: #1b1f24; }
-    code { background: #eef0f3; padding: 2px 5px; border-radius: 4px; }
-  </style>
+  <meta name="description" content="Vitalis: book online yoga, fitness and doctor sessions with credits.">
+  <title>Vitalis · Online yoga, fitness and doctors</title>
+  <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-  <h1>It works</h1>
-  <p>This app was created from <code>anuj-orbit/app-template</code> and deployed by Coolify.</p>
-  <p>Status: <a href="/health">/health</a></p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#/" aria-label="Vitalis home">Vitalis</a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" class="nav" aria-label="Main"></nav>
+    </div>
+  </header>
+  <main id="main" class="container" tabindex="-1">
+    <div id="app"><noscript>Vitalis needs JavaScript enabled.</noscript></div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Vitalis. 1 credit = 5 AED. Times are shown in Dubai time (GST, UTC+4).</p>
+      <p>Not for emergencies. In an emergency call 999 (UAE).</p>
+    </div>
+  </footer>
+  <script type="module" src="/js/app.js"></script>
 </body>
 </html>
