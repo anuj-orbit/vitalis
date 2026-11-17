@@ -262,7 +262,7 @@ test("HTTP: register/login are rate limited to 20 per window", async () => {
 });
 
 test("HTTP: session cookie carries Secure when config.isProduction", async () => {
-  const app = await startApp({ config: { isProduction: true } });
+  const app = await startApp({ config: { isProduction: true, cookieSecure: true } });
   try {
     const c = client(app.url);
     const reg = await c.post("/api/auth/register", {
