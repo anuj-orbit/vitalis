@@ -29,5 +29,6 @@ export function loadConfig(env = process.env) {
     bookingHorizonDays: 60,
     bcryptRounds: intOr(env.BCRYPT_ROUNDS, 10, 4, 15),
     isProduction,
+    cookieSecure: env.COOKIE_SECURE ? env.COOKIE_SECURE === "true" : isProduction,
   };
 }

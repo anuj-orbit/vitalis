@@ -17,7 +17,7 @@ export function authRouter(deps) {
   const startSession = (res, user) => {
     const exp = Math.floor(now().getTime() / 1000) + config.sessionTtlSec;
     const token = signSession({ uid: user.id, exp }, config.sessionSecret);
-    res.setHeader("Set-Cookie", sessionCookie(token, { secure: config.isProduction, maxAgeSec: config.sessionTtlSec }));
+    res.setHeader("Set-Cookie", sessionCookie(token, { secure: config.cookieSecure, maxAgeSec: config.sessionTtlSec }));
   };
 
   router.post(
@@ -42,7 +42,7 @@ export function authRouter(deps) {
   );
 
   router.post("/logout", (_req, res) => {
-    res.setHeader("Set-Cookie", clearSessionCookie({ secure: config.isProduction }));
+    res.setHeader("Set-Cookie", clearSessionCookie({ secure: config.cookieSecure }));
     res.status(204).end();
   });
 
